@@ -20,7 +20,7 @@ def registration_request(request):
     elif request.method == 'POST':
         # Check if user exists
         username = request.POST['username']
-        password = request.POST['psw']
+        password = request.POST['pwd']
         first_name = request.POST['firstname']
         last_name = request.POST['lastname']
         user_exist = False
@@ -43,7 +43,7 @@ def login_request(request):
     context = {}
     if request.method == "POST":
         username = request.POST['username']
-        password = request.POST['psw']
+        password = request.POST['pwd']
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
